@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon"  href="thiru.jpg">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body>
+    
+    <div class="main-container">
+        <div class="continer">
+            <div class="header">
+                <input type="text" id="input" placeholder="Enter No">
+                <button id="btn" onclick="result()">click</button>
+            </div>
+            
+            <div class="main-list ">
+                <div>
+                    <label for="">குறள் எண் :</label>
+                    <span id="kural-num"></span>
+                </div>
+                <div class="paal">
+                    <label  for="">பால் :</label>
+                    <span id="kural-paal"></span>
+                </div>
+                
+            </div>
+            <div class="center">
+                <label for="" class="valhead">வாழ்த்து</label>
+                <div id="valthu"></div>
+            </div>
+            
+            
+            <div class="kural">
+                <label for="">குறள் :</label>
+
+                <div id="fir-line"></div>
+                <div id="sec-line"></div>
+            </div>
+            
+            <div class="porul">
+                <label for="">பொருள் விளக்கம் :</label>
+                <div id="def"></div>
+            </div>
+            
+        </div>
+    </div>
+            
+    
+
+
+    <script>
+ 
+
+        function result(){
+
+            let userval = Number (document.getElementById("input").value)
+           let first = document.getElementById("fir-line");
+           let second = document.getElementById("sec-line");
+           let kunum = document.getElementById("kural-num");
+           let kupaal = document.getElementById("kural-paal");
+           let def = document.getElementById("def");
+
+           fetch(`https://api-thirukkural.vercel.app/api?num= ${userval}`)
+
+            .then(res=>res.json())
+            .then(msg => kural(msg))
+
+            function kural(msg){
+
+
+            kunum.innerHTML = (Object.entries(msg)[0][1])
+            kupaal.innerHTML = (Object.entries(msg)[1][1])
+            valthu.innerHTML = (Object.entries(msg)[3][1])
+            first.innerHTML = (Object.entries(msg)[4][1]);
+            second.innerHTML = (Object.entries(msg)[5][1]);
+            def.innerHTML = (Object.entries(msg)[6][1]);
+           
+            }
+        }
+            
+
+
+    </script>
+
+    
+   
+    
+
+
+    <script src="app.js"></script>
+</body>
+</html>
