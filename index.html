@@ -55,32 +55,37 @@
     <script>
  
 
-        function result(){
+ function result(){
+    alert("API LINK SOM PROBLEM! 402: PAYMENT_REQUIRED , Code: DEPLOYMENT_DISABLED ,  ID: bom1::lp5c4-1696300812548-cc321d718b4a")
+    
+ }
 
-            let userval = Number (document.getElementById("input").value)
-           let first = document.getElementById("fir-line");
-           let second = document.getElementById("sec-line");
-           let kunum = document.getElementById("kural-num");
-           let kupaal = document.getElementById("kural-paal");
-           let def = document.getElementById("def");
+        // function result(){
 
-           fetch(`https://api-thirukkural.vercel.app/api?num= ${userval}`)
+        //     let userval = Number (document.getElementById("input").value)
+        //    let first = document.getElementById("fir-line");
+        //    let second = document.getElementById("sec-line");
+        //    let kunum = document.getElementById("kural-num");
+        //    let kupaal = document.getElementById("kural-paal");
+        //    let def = document.getElementById("def");
 
-            .then(res=>res.json())
-            .then(msg => kural(msg))
+        //    fetch(`https://api-thirukkural.vercel.app/api?num= ${userval}`)
 
-            function kural(msg){
+        //     .then(res=>res.json())
+        //     .then(msg => kural(msg))
+
+        //     function kural(msg){
 
 
-            kunum.innerHTML = (Object.entries(msg)[0][1])
-            kupaal.innerHTML = (Object.entries(msg)[1][1])
-            valthu.innerHTML = (Object.entries(msg)[3][1])
-            first.innerHTML = (Object.entries(msg)[4][1]);
-            second.innerHTML = (Object.entries(msg)[5][1]);
-            def.innerHTML = (Object.entries(msg)[6][1]);
+        //     kunum.innerHTML = (Object.entries(msg)[0][1])
+        //     kupaal.innerHTML = (Object.entries(msg)[1][1])
+        //     valthu.innerHTML = (Object.entries(msg)[3][1])
+        //     first.innerHTML = (Object.entries(msg)[4][1]);
+        //     second.innerHTML = (Object.entries(msg)[5][1]);
+        //     def.innerHTML = (Object.entries(msg)[6][1]);
            
-            }
-        }
+        //     }
+        // }
             
 
 
@@ -91,6 +96,6 @@
     
 
 
-    <script src="app.js"></script>
+    <!-- <script src="app.js"></script> -->
 </body>
 </html>
